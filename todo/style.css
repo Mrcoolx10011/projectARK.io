@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #78c1f3;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    width: 45%;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.todo-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.todo-body input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px ;
+    font-size: 20px;
+}
+
+.todo-body img {
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    padding: 15px;
+    background: limegreen;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.todo-control {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+.delete.todo-control {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+h5 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(13, 125, 51);
+}
+
+li {
+    opacity: 0;
+    animation: new-item-animation 0.3s linear forwards;
+}
+
+@keyframes new-item-animation {
+    from {
+        opacity: 0;
+        transform: translate(-400px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+li.delete-item {
+    animation: reverse-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 0% 100%;
+}
+
+@keyframes reverse-item-animation {
+    0% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+    100% {
+        transform: translate(600px) rotate(90deg);
+    }
+}
+
+.toggleMe {
+    animation: hideME 5s forwards;
+}
+
+@keyframes hideME {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
